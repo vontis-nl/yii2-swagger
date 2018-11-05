@@ -51,7 +51,7 @@ class OpenAPIRenderer extends Action
     /**
      * @inheritdoc
      */
-    public function init(): void
+    public function init()
     {
         parent::init();
 
@@ -63,7 +63,7 @@ class OpenAPIRenderer extends Action
     /**
      * @inheritdoc
      */
-    public function run(): Response
+    public function run()
     {
         $this->enableCORS();
 
@@ -75,7 +75,7 @@ class OpenAPIRenderer extends Action
      *
      * @return Swagger
      */
-    protected function getSwaggerDocumentation(): Swagger
+    protected function getSwaggerDocumentation()
     {
         if (!$this->cache instanceof Cache) {
             return \Swagger\scan($this->scanDir, $this->scanOptions);
@@ -89,7 +89,7 @@ class OpenAPIRenderer extends Action
     /**
      * Enable CORS
      */
-    protected function enableCORS(): void
+    protected function enableCORS()
     {
         $headers = Yii::$app->getResponse()->getHeaders();
 
